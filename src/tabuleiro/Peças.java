@@ -2,7 +2,7 @@ package tabuleiro;
 
 public class Peças {
 
-	private Posicao posicao;
+	protected Posicao posicao;
 	private Tabuleiro tabuleiro;
 	
 	

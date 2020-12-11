@@ -14,6 +14,11 @@ public class Tabuleiro {
 	
 	}
 	
+	public void posicaoInicialdaPeça(Peças peça , Posicao posicao) {//pega a peça em determinada linha e coluna e movimenta pra posição que vem como parametro
+		peças[posicao.getLinha()] [posicao.getColuna()] = peça;
+		peça.posicao = posicao;
+	}
+	
 	//metodo que retorna a peça com base na sua linha e coluna 
 	public Peças peça (int linha, int coluna) {
 		return peças [linha] [coluna];
