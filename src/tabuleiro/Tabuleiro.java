@@ -14,6 +14,16 @@ public class Tabuleiro {
 	
 	}
 	
+	//metodo que retorna a peça com base na sua linha e coluna 
+	public Peças peça (int linha, int coluna) {
+		return peças [linha] [coluna];
+	}
+	
+	//metodo que retorna a peça com base na posição escolhida 
+	public Peças peça (Posicao posição) {
+		return peças [posição.getLinha()] [posição.getColuna()];
+	}
+	
 	
 //get e set sem as peças pois metodos que irão movimentar elas 
 	public int getLinhas() {

@@ -1,0 +1,31 @@
+package application;
+
+import xadrez.PeçaXadrez;
+
+public class UI {
+	
+	public static void imprimirTabuleiro(PeçaXadrez[][]peças) {
+		for (int i = 0; i < peças.length; i++) {
+			System.out.print((8-i)+ " ");
+			for (int j = 0; j < peças.length; j++) {
+				imprimirPeça(peças[i][j]);
+			}
+			System.out.println();
+		}
+		System.out.print("  A B C D E F G H");
+	}
+	
+	
+	
+	//metodo para imprimir a peça do xadrez
+	private static void imprimirPeça(PeçaXadrez peça) {
+		if (peça == null) {
+			System.out.print("-");
+		}else {
+			System.out.print(peça);
+		}
+		
+		System.out.print(" ");
+	}
+
+}
