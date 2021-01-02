@@ -1,8 +1,5 @@
 package xadrez;
 
-import java.awt.Color;
-
-import tabuleiro.Posicao;
 import tabuleiro.Tabuleiro;
 import xadrez.pecas.Rei;
 import xadrez.pecas.Torre;
@@ -17,11 +14,26 @@ public class PartidaDeXadrez {
 		iniciarPartida();
 	}
 	
-	public void iniciarPartida() {
-		tabuleiro.posicaoInicialdaPeça(new Torre(tabuleiro, Cores.WHITE), new Posicao(0, 0));
-		tabuleiro.posicaoInicialdaPeça(new Rei(tabuleiro, Cores.WHITE), new Posicao(0, 4));
-		tabuleiro.posicaoInicialdaPeça(new Rei(tabuleiro, Cores.BLACK), new Posicao(7, 4));
+	
+//metodo convertendo uma peça para a posicao de matriz e vice versa	
+	public void novaPeça(char coluna , int linha , PeçaXadrez peca) {
+		tabuleiro.posicaoInicialdaPeça(peca, new XadrezPosicao(coluna, linha).aPosicao());
+		
 	}
+	
+	public void iniciarPartida() {
+		novaPeça('a', 1 ,new Torre(tabuleiro, Cores.WHITE));
+	    novaPeça('c', 7,new Rei(tabuleiro, Cores.WHITE));
+	    novaPeça('c', 1,new Rei(tabuleiro, Cores.BLACK));
+	}
+	
+	
+	//modelo antigo passando a matriz e não as posiçoes de xadrez
+//	public void iniciarPartida() {
+//		tabuleiro.posicaoInicialdaPeça(new Torre(tabuleiro, Cores.WHITE), new Posicao(0, 0));
+//		tabuleiro.posicaoInicialdaPeça(new Rei(tabuleiro, Cores.WHITE), new Posicao(0, 4));
+//		tabuleiro.posicaoInicialdaPeça(new Rei(tabuleiro, Cores.BLACK), new Posicao(7, 4));
+//	}
 	
 	
 	
